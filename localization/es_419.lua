@@ -133,6 +133,14 @@ return {
           'de reactivarse'
         }
       },  
+      j_Sculio_anatomy_changed_prob = {
+        name = 'Anatomía',
+        text = {
+          'Cada {C:attention}carta de número{} tiene',
+          'una prob. {C:green}igual a su valor{}',
+          'de reactivarse'
+        }
+      },  
       -- 11. Handheld
       j_Sculio_handheld = {
         name = 'Juego Retro',

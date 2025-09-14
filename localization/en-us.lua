@@ -128,10 +128,20 @@ return {
         name = 'Anatomy',
         text = {
           'Scored {C:attention}number cards{} have',
-          '{C:green}#1#% of their rank out of #2#{}',
-          'to be retriggered once'
+          'an {C:green}X in #2#{} chance',
+          'to retrigger, where',
+          '{C:green}X{} equals {C:attention}the card\'s rank{}'
         }
-      },  
+      },
+      j_Sculio_anatomy_changed_prob = {
+        name = 'Anatomy',
+        text = {
+          'Scored {C:attention}number cards{} have',
+          'an {C:green}X in #2#{} chance',
+          'to retrigger, where',
+          '{C:green}X{} equals {C:attention}#1#% of the card\'s rank{}'
+        }
+      },
       -- 11. Handheld
       j_Sculio_handheld = {
         name = 'Handheld',

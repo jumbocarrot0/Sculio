@@ -18,7 +18,11 @@ SMODS.Joker {
   cost = 7,
   blueprint_compat = true,
   loc_vars = function(self, info_queue, card)
+    local key = nil
     local displayed_numerator, displayed_denominator = SMODS.get_probability_vars(card, 1, card.ability.extra.odds, 'j_Sculio_anatomy')
+    if displayed_numerator ~= 1 then
+        key = "j_Sculio_anatomy_changed_prob"
+    end
     return { key = key, vars = { displayed_numerator * 100, displayed_denominator } }
   end,
   calculate = function(self, card, context)
