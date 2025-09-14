@@ -10,7 +10,7 @@ SMODS.Joker {
   cost = 4,
   blueprint_compat = true,
   loc_vars = function(self, info_queue, card)
-    local displayed_numerator, displayed_denominator = SMODS.get_probability_vars(card, 1, card.ability.extra.shatter_odds, 'j_Sculio_binary')
+    local displayed_numerator, displayed_denominator = SMODS.get_probability_vars(card, 1, card.ability.extra.odds, 'j_Sculio_binary')
     return { vars = { displayed_numerator, displayed_denominator, card.ability.extra.chips_gain, card.ability.extra.mult_gain, card.ability.extra.chips, card.ability.extra.mult } }
   end,
   calculate = function(self, card, context)
