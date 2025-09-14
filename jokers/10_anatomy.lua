@@ -18,13 +18,14 @@ SMODS.Joker {
   cost = 7,
   blueprint_compat = true,
   loc_vars = function(self, info_queue, card)
-    return { vars = { (G.GAME.probabilities.normal or 1) * 100, card.ability.extra.odds } }
+    local displayed_numerator, displayed_denominator = SMODS.get_probability_vars(card, 1, card.ability.extra.odds, 'j_Sculio_anatomy')
+    return { key = key, vars = { displayed_numerator * 100, displayed_denominator } }
   end,
   calculate = function(self, card, context)
     if context.cardarea == G.play and context.repetition and not context.repetition_only then
       card_id = context.other_card:get_id()
 
-      if card_id < 11 and pseudorandom('anatomy') < (G.GAME.probabilities.normal * card_id) / card.ability.extra.odds then
+      if card_id < 11 and SMODS.pseudorandom_probability(card, 'anatomy', card_id, card.ability.extra.odds, 'j_Sculio_anatomy') then
         return {
           message = localize('k_again_ex'),
           repetitions = 1
